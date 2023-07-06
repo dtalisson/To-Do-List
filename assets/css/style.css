@@ -142,6 +142,10 @@ img {
   }
 }
 @media ( max-width:426px) {  
+  body { 
+    background-color: beige;
+  }
+  
   #toDoListBg { 
     width: 100%;
     height: 100vh;
