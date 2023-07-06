@@ -63,7 +63,7 @@ hr {
 
   
 }
-textarea:focus, input:focus {
+textarea:focus, input:focus{
   box-shadow: 0 0 0 0;
   outline: 0;
 }
@@ -75,8 +75,8 @@ textarea:focus, input:focus {
 }
 .task {
   display: flex;
-  justify-content: space-between;
   width: 100%;
+  justify-content: space-between;
   margin: 1rem 1rem;
   padding: .6rem;
   align-items: center;
@@ -85,9 +85,16 @@ textarea:focus, input:focus {
   font-weight: 700;
   
 }
+
 .task img { 
   width: 40px;
   cursor: pointer;
+}
+
+.box {
+  display: flex;
+  justify-content: end;
+  gap: 1.2rem;
 }
 
 img { 
@@ -112,6 +119,44 @@ li button {
   text-decoration: line-through;
   color: white;
 
+}
+
+.modal { 
+  margin: auto;
+  border: none;
+  border-radius: .5rem;
+  width: 400px;
+  padding: 2rem;
+}
+
+.modal::backdrop { 
+  background-color: rgba(0, 0, 0, 0.499);
+}
+
+.modalEdit { 
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1rem;
+}
+.modal input { 
+   padding: .4rem;
+}
+.modal button { 
+  width: 100px;
+  height: 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: rgb(71, 172, 71);
+  border: 1px solid black;
+  cursor: pointer;
+}
+.modal .sectionModal { 
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
 }
 
 @media ( max-width:768px) { 

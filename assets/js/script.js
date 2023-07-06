@@ -2,6 +2,11 @@ const button = document.querySelector('.newTask')
 const input = document.querySelector('.inputTask')
 const LiCompleta = document.querySelector('#List') 
 const btnCheck = document.querySelector('#btnCheck')
+const edit = document.querySelector('#edit')
+const modal = document.querySelector('dialog')
+const liModal = document.querySelector('modal')
+const salvar = document.querySelector('#salvar')
+
 
 // basicamente, pegando os itens!!
 // seletores
@@ -9,8 +14,6 @@ const btnCheck = document.querySelector('#btnCheck')
 
 let listValores = [] // 
 // criando uma lista vázia.
-
-
 
 function pegarValores () { 
    listValores.push({
@@ -29,14 +32,19 @@ function pegarValores () {
 
 function mostrarLi() { 
     let li = ''  // criando uma variavel para usarmos como novo texto
-    listValores.forEach( (dados, index) => { // procurando os inputs que foram adicionados e dando eles o nome de "dados" | também procurando o index (o número onde ele se encontra[a posição])
+    listValores.forEach((dados, index) => { // procurando os inputs que foram adicionados e dando eles o nome de "dados" | também procurando o index (o número onde ele se encontra[a posição])
         li +=  `  
         <li class="task ${dados.concluida && "done"}"> 
-           <button type="button" id="btnCheck"><img src="img/checked.png" alt="" id="checked" onclick="sucesso(${index})"> </button> 
-            <p>${dados.item}</p>
-            <button type="button" id="btnRemove"><img src="img/trash.png" alt="" id="remove" onclick="removerItem(${index})"> </button> 
+        <p>${dados.item}</p>
+            <div class="box">
+            <button type="button" id="btnCheck"><img src="img/checked.png" alt="" id="checked" onclick="sucesso(${index})"> </button> 
+            <button type="button" id="btnRemove"><img src="img/trash.png" alt="" id="remove" onclick="removerItem(${index})"> </button>
+            <button type="button"><img src="img/edit.png" alt="" id="${edit}" onclick="editItem(${index})"> </button> 
+
+            </div>
           </li>
         `
+        
         // no li class, vamos direcionar, caso o dado for concluido insira a class "done" que estamos usando para verificar se a tarefa foi concluida ou não
         // basicamente, transformando o li nesse bloco de texto html
     })
@@ -47,6 +55,13 @@ function mostrarLi() {
      // e transformando ela em string
 } 
 // função de mostrar os valores
+function editItem() { 
+   modal.showModal()
+
+   
+}
+
+
 
 function removerItem(index) { // função
    listValores.splice(index, 1)
