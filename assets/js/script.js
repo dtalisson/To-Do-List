@@ -62,7 +62,9 @@ function sucesso(index){
 // function de sucesso
 function reload() { 
    const localDosItens = localStorage.getItem('lista') // salvando a lista que deixamos no localStorage numa constante
-   listValores = JSON.parse(localDosItens)  // pegando a lista e transformando ela em objeto novamente 
+   if(localDosItens) { 
+      listValores = JSON.parse(localDosItens)  // pegando a lista e transformando ela em objeto novamente 
+   }
    mostrarLi() // chamando a função de mostrar os itens!
 }
 // function de pegar o localStorage e retornar para ficar salvo
