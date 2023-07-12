@@ -39,7 +39,6 @@ function mostrarLi() {
             <div class="box">
             <button type="button" id="btnCheck"><img src="img/checked.png" alt="" id="checked" onclick="sucesso(${index})"> </button> 
             <button type="button" id="btnRemove"><img src="img/trash.png" alt="" id="remove" onclick="removerItem(${index})"> </button>
-            <button type="button"><img src="img/edit.png" alt="" id="${edit}" onclick="editItem(${index})"> </button> 
 
             </div>
           </li>
